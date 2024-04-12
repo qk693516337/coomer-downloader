@@ -6,6 +6,7 @@ import (
 	"github.com/pterm/pterm"
 	"github.com/spf13/afero"
 	"sync"
+	"os"
 )
 
 func DownloadMedias(medias []Media, parallel int) []Download {
