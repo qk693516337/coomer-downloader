@@ -51,6 +51,7 @@ func downloadFile(url string, filePath string) error {
 	// 检查文件是否存在
 	if _, err := os.Stat(filePath); err == nil {
 		// 文件存在，直接返回 nil
+		pterm.Println(filePath + " exists, skipped!")
 		return nil
 	}
 	resp, err := client.
