@@ -48,6 +48,11 @@ func DownloadMedias(medias []Media, parallel int) []Download {
 // region - Private functions
 
 func downloadFile(url string, filePath string) error {
+	// 检查文件是否存在
+	if _, err := os.Stat(filePath); err == nil {
+		// 文件存在，直接返回 nil
+		return nil
+	}
 	resp, err := client.
 		R().
 		SetOutput(filePath).
